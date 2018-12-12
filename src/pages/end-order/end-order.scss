@@ -1,0 +1,28 @@
+page-end-order {
+
+    ion-content.content-md {
+        background-color: rgb(184, 64, 64);
+
+        & .scroll-content {
+            display: flex;
+        }
+    }
+
+    .ticket-container {
+        text-align: center;
+        width: 100%;
+
+        & h1 {
+            text-transform: uppercase;
+            color: rgb(173, 180, 80);
+        }
+
+        & p {
+            background-color: #fff;
+            color: rgb(57, 57, 243);
+            padding: 100px 0px 100px 0px;
+            font-size: 80px;
+        }
+    }
+
+}

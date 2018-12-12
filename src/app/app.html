@@ -1,0 +1,23 @@
+<ion-menu [content]="content">
+<ion-header>
+<ion-toolbar>Menu</ion-toolbar>
+</ion-header>
+<ion-content>
+    <div class="user">     
+    <h1>Nome do Usuário</h1>
+    </div>
+<ion-list>
+    <button ion-item (click)="selectTab(0)" menuToggle>
+        Perfil       
+    </button>
+    <button ion-item (click)="selectTab(1)" menuToggle>
+        Comprar       
+    </button>
+    <button ion-item (click)="selectTab(2)" menuToggle>
+        Sair       
+  </button>
+</ion-list>
+</ion-content>
+</ion-menu>
+
+<ion-nav [root]="rootPage" #content></ion-nav>

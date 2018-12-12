@@ -1,0 +1,72 @@
+<!--
+  Generated template for the CheckoutPage page.
+
+  See http://ionicframework.com/docs/components/#navigation for more info on
+  Ionic pages and navigation.
+-->
+<ion-header>
+
+    <ion-navbar>
+      <ion-title>Pagamento</ion-title>
+    </ion-navbar>
+  
+  </ion-header>
+  
+  
+  <ion-content padding >
+    <div padding>
+      <ion-segment [(ngModel)]="paymentMethod" >
+       <!--<ion-segment-button *ngFor="let payment of paymentMethods" [value]="CREDIT_CARD">
+          {{payment.name}}
+        </ion-segment-button>-->
+      </ion-segment>
+    </div>
+    <div [ngSwitch]="'CREDIT_CARD'">
+     <!--<div *ngSwitchCase="'BOLETO'">
+        area do boleto
+      </div>-->
+  
+      <div *ngSwitchCase="'CREDIT_CARD'" >
+        <ion-item >
+          <ion-label>Numero do cartao</ion-label>
+          <ion-input type="text" [(ngModel)]="creditCard.num"></ion-input>
+        </ion-item>
+        <ion-item>
+          <ion-label>Código de segurança</ion-label>
+          <ion-input type="text" [(ngModel)]="creditCard.cvv"></ion-input>
+        </ion-item>
+        <ion-item>
+          <ion-label>Mês - Expiração</ion-label>
+          <ion-input type="text" [(ngModel)]="creditCard.monthExp"></ion-input>
+        </ion-item>
+        <ion-item>
+          <ion-label>Ano - Expiração</ion-label>
+          <ion-input type="text" [(ngModel)]="creditCard.yearExp"></ion-input>
+        </ion-item>
+        <br>
+        <br>
+        <ion-item>
+        <ion-label>Salvar dados p/ compras futuras</ion-label>
+        <ion-checkbox color="dark" > </ion-checkbox> 
+        </ion-item>
+        <br>
+        <br>
+      </div>
+  
+      <!--<div *ngSwitchCase="'BALANCE'">
+        area do balanço
+      </div>-->
+    </div>
+    <ion-card>
+      <ion-card-header text-center>
+        Total a pagar R$: <strong>{{cart.total}}</strong>
+      </ion-card-header>
+      <ion-card-content>
+        <button ion-button full (click)="presentLoading()">Concluir pagamento</button>
+        
+        <!--<button ion-button full (click)="pagar()">Concluir pagamento</button>-->
+        <!--<button ion-button full (click)="makePayment()">Concluir pagamento</button>-->
+      </ion-card-content>
+    </ion-card>
+  </ion-content>
+  
